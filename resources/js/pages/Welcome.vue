@@ -48,7 +48,7 @@ import { Head, Link } from '@inertiajs/vue3';
         <div class="bg-white shadow-lg rounded-xl overflow-hidden">
           <img src="/images/sushi.jpg" alt="Sushi" class="w-full h-48 object-cover" />
           <div class="p-4">
-            <h4 class="text-xl font-semibold mb-2">Fresh Salmon Sushi Pack</h4>
+            <h4 class="text-xl font-semibold mb-2">Fresh Salmon <Base>Sushi</Base></h4>
             <p class="text-gray-600 text-sm mb-4">"Melt-in-your-mouth freshness. A must-try for sushi lovers."</p>
             <span class="text-yellow-500 font-bold">★★★★☆</span>
           </div>
