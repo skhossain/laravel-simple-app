@@ -1,0 +1,26 @@
+name: Detect Changed Files
+
+on:
+  push:
+    branches:
+      - main  # Or your default branch
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+
+    outputs:
+      result: ${{ steps.changed-files.outputs.files }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get list of changed files
+        id: changed-files
+        run: |
+          git fetch origin main
+          changed_files=$(git diff --name-only HEAD~1 HEAD)
+          echo "Changed files:"
+          echo "$changed_files"
+          echo "files=$changed_files" >> $GITHUB_OUTPUT

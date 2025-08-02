@@ -1,0 +1,16 @@
+name: Follow Up Workflow
+
+on:
+  workflow_run:
+    workflows: ["Detect Changed Files"]
+    types:
+      - completed
+
+jobs:
+  follow-up-task:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify or process further
+        run: echo "First workflow completed successfully. Proceeding..."
